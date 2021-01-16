@@ -119,17 +119,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Email sending variables
-
-# EMAIL_HOST = "smtp.gmail.com"
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = "asaraswat638@gmail.com"
-# EMAIL_HOST_PASSWORD = "ultron@9"
-
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
