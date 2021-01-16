@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Visitor</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<th>Contact</th>
+                            <th>Email</th>
+                            <th>Purpose</th>
+                            <th>Photo</th>
+                            <th>Category</th>
+                            <th>Date Visited</th>
+                            <th>Host</th>
+						</tr>
+                        {% for i in visitors %}
+                        <tr>
+                            <td>{{i.name}}</td>
+                            <td>{{i.contact}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.purpose}}</td>
+                            <td>{{i.photo}}</td>
+                            <td>{{i.category}}</td>
+                            <td>{{i.date_visited}}</td>
+                            <td>{{i.host}}</td>
+                        </tr>
+                        {% endfor %}
+                        
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

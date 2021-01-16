@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{%  include 'vms/navbar.html' %}
+{%  include 'vms/status.html' %}
+
+<br>
+
+<div class="row">
+ 	<div class="col-md-5">
+		<h5>Employees:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Create Employees</a>
+			<table class="table table-sm">
+				<tr>
+					<th></th>
+					<th>Employees</th>
+					<th>Email</th>
+				</tr>
+                {% for i in employees %}
+                <tr>
+					<td><a class="btn btn-sm btn-info" href="{% url 'vms:employee_dash' i.id %}">View</a></td>
+					<!-- <td>{{i.id}}</td>  -->
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+
+                </tr>
+                {% endfor %}
+			</table>
+		</div>
+	</div>
+	 
+	<div class="col-md-7">
+		<h5>LAST 5 Visits:</h5>
+		<hr>
+		<div class="card card-body">
+    
+			<!-- <a class="btn btn-primary  btn-sm btn-block" href="{% url 'vms:create_visit' %}">Create Visits</a> -->
+			<table class="table table-sm">
+				<tr>
+					<th>Visitor</th>
+					<th>Date Visited</th>
+					<th>Status</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+                {% for i in visits %}
+                    <tr>
+                        <td>{{ i.visitor }}</td>
+                        <td>{{ i.date_visited }}</td>
+                        <td>{{ i.status }}</td>
+                        <td> <a class="btn btn-sm btn-info" href="{% url 'vms:update_visit' i.id %}">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'vms:delete_visit' i.id %}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+			</table>
+		</div>
+	</div>
+
+
+	<div class="col-md-5">
+		<h5>Recent Activity:</h5>
+		<hr>
+		<div class="card card-body">
+    
+			<table class="table table-hover">
+				<!-- <thead>
+			  <tr>
+				<th scope="col">#</th>
+				<th scope="col">First</th>
+				<th scope="col">Last</th>
+				<th scope="col">Handle</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<th scope="row">1</th>
+				<td>Mark</td>
+				<td>Otto</td>
+				<td>@mdo</td>
+			  </tr>
+			  <tr>
+				<th scope="row">2</th>
+				<td>Jacob</td>
+				<td>Thornton</td>
+				<td>@fat</td>
+			  </tr>
+			  <tr>
+				<th scope="row">3</th>
+				<td colspan="2">Larry the Bird</td>
+				<td>@twitter</td>
+			  </tr>
+			</tbody> -->
+		  </table>
+		</div>
+	</div>
+</div>
+{% endblock %}

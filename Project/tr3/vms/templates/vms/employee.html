@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- {%  include 'vms/status.html' %} -->
+
+<br>
+
+<div class="row">
+ 	<div class="col-md-5">
+		<h5>Employees:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Create Employees</a>
+			<table class="table table-sm">
+				<tr>
+					<th></th>
+					<th>Employees</th>
+					<th>Email</th>
+				</tr>
+                {% for i in employee %}
+                <tr>
+					<!-- <td><a class="btn btn-sm btn-info" href="{% url 'vms:employee' i.id %}">View</a></td> -->
+					<td>{{i.id}}</td> 
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+
+                </tr>
+                {% endfor %}
+			</table>
+		</div>
+    </div>
+</div>
+
+{% endblock %}
